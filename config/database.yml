@@ -82,4 +82,4 @@ production:
   <<: *default
   database: savvy_saver_production
   username: savvy_saver
-  password: <%= ENV['SAVVy_SAVER_DATABASE_PASSWORD'] %>
+  password: <%= ENV['SAVVY_SAVER_DATABASE_PASSWORD'] %>
