@@ -1,0 +1,8 @@
+<%= simple_form_for @user do |f| %>
+  <%= f.input :first_name, label: "First Name" %>
+  <%= f.input :last_name, label: "Last Name" %>
+  <%= f.input :email, label: "Email" %>
+  <hr>
+  <%= f.button :submit, class: "btn btn-primary" %>
+  <%= link_to "Change Password", change_password_path %>
+<% end %>

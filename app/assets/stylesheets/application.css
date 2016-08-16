@@ -1,0 +1,272 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require rails_bootstrap_forms
+ *= require font-awesome
+ *= require_self
+ */
+
+ html body {
+  min-height: 100%;
+  position: relative
+}
+
+#app-title {
+  font-family: 'Marck Script', cursive;
+  font-size: 140px;
+  margin-bottom: 80px;
+  color: #9DE2F1;
+
+}
+
+.navbar-app-title {
+  color: #9DE2F1;
+  font-family: 'Marck Script', cursive;
+  font-size: 20px;
+}
+
+.navbar-header img {
+  width: 50px;
+  height: 50px;
+  margin-top: -10px
+}
+
+#custom-nav {
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    z-index: 999;
+    -webkit-transition: background .5s ease-in-out, opacity .5s ease;
+    -moz-transition: background .5s ease-in-out, opacity .5s ease;
+    transition: background .5s ease-in-out, opacity .5s ease;
+    min-height: 50px;
+}
+
+#custom-nav .dropdown {
+    border-radius: 0;
+    border: none;
+    border-top: 5px solid transparent;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding-top: 0;
+}
+
+#custom-nav .container {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    -webkit-transition: padding-top .5s ease, padding-bottom .5s ease;
+    -moz-transition: padding-top .5s ease, padding-bottom .5s ease;
+    transition: padding-top .5s ease, padding-top .5s ease, padding-bottom .5s ease;
+}
+
+#custom-nav.affix {
+    top: 0;
+    min-width: 100%;
+    opacity: 1;
+    -webkit-transition: background .5s ease-in-out, opacity .5s ease;
+    -moz-transition: background .5s ease-in-out, opacity .5s ease;
+    transition: background .5s ease-in-out, opacity .5s ease;
+    z-index: 1;
+    background-color: #0088cc;
+    border-color: #0072ab;
+    background-image: -webkit-gradient(linear, left 0%, left 100%, from(#00aaff), to(#0088cc));
+    background-image: -webkit-linear-gradient(top, #00aaff, 0%, #0088cc, 100%);
+    background-image: -moz-linear-gradient(top, #00aaff 0%, #0088cc 100%);
+    background-image: linear-gradient(to bottom, #00aaff 0%, #0088cc 100%);
+    background-repeat: repeat-x;
+}
+
+.navbar-custom .navbar-brand {
+  margin-top: -10px;
+}
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-brand:focus {
+  color: #000000;
+  background-color: transparent;
+}
+.navbar-custom .navbar-text {
+  color: #ffffff;
+}
+.navbar-custom .navbar-nav > li:last-child > a {
+  /*border-right: 1px solid #0072ab;*/
+}
+.navbar-custom .navbar-nav > li > a {
+  color: #ffffff;
+  /*border-left: 1px solid #0072ab;*/
+}
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:focus {
+  color: #000000;
+  background-color: transparent;
+}
+.navbar-custom .navbar-nav > .active > a,
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus {
+  color: #000000;
+  background-color: #0072ab;
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#0072ab), to(#0094de));
+  background-image: -webkit-linear-gradient(top, #0072ab, 0%, #0094de, 100%);
+  background-image: -moz-linear-gradient(top, #0072ab 0%, #0094de 100%);
+  background-image: linear-gradient(to bottom, #0072ab 0%, #0094de 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0072ab', endColorstr='#ff0094de', GradientType=0);
+}
+.navbar-custom .navbar-nav > .disabled > a,
+.navbar-custom .navbar-nav > .disabled > a:hover,
+.navbar-custom .navbar-nav > .disabled > a:focus {
+  color: #cccccc;
+  background-color: transparent;
+}
+.navbar-custom .navbar-toggle {
+  border-color: #dddddd;
+}
+.navbar-custom .navbar-toggle:hover,
+.navbar-custom .navbar-toggle:focus {
+  background-color: #dddddd;
+}
+.navbar-custom .navbar-toggle .icon-bar {
+  background-color: #cccccc;
+}
+.navbar-custom .navbar-collapse,
+.navbar-custom .navbar-form {
+  border-color: #0070a8;
+}
+.navbar-custom .navbar-nav > .dropdown > a:hover .caret,
+.navbar-custom .navbar-nav > .dropdown > a:focus .caret {
+  border-top-color: #000000;
+  border-bottom-color: #000000;
+}
+.navbar-custom .navbar-nav > .open > a,
+.navbar-custom .navbar-nav > .open > a:hover,
+.navbar-custom .navbar-nav > .open > a:focus {
+  background-color: #0072ab;
+  color: #000000;
+}
+.navbar-custom .navbar-nav > .open > a .caret,
+.navbar-custom .navbar-nav > .open > a:hover .caret,
+.navbar-custom .navbar-nav > .open > a:focus .caret {
+  border-top-color: #000000;
+  border-bottom-color: #000000;
+}
+.navbar-custom .navbar-nav > .dropdown > a .caret {
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+@media (max-width: 767) {
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffffff;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #000000;
+    background-color: transparent;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #000000;
+    background-color: #0072ab;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #cccccc;
+    background-color: transparent;
+  }
+}
+.navbar-custom .navbar-link {
+  color: #ffffff;
+}
+.navbar-custom .navbar-link:hover {
+  color: #000000;
+}
+
+.google-button {
+  background-color:#dd4b39;
+  color:white;
+  margin-bottom: 10px;
+}
+
+.google-button:hover {
+  text-decoration: none
+}
+
+.facebook-button {
+  background-color:#3b5998;
+  color:white;
+  margin-bottom: 10px;
+}
+
+.facebook-button:hover {
+  text-decoration: none
+}
+
+.content {
+  min-height: 100%;
+  margin-top: 0;
+  padding-top: 30px;
+  position: relative;
+  height: 100%;
+}
+
+.info-row {
+  color: white;
+}
+
+.info-row:hover {
+  color: black;
+}
+
+.table-link {
+  color: blue;
+}
+.table-link:hover {
+  color: blue;
+}
+
+td a {
+  color: #090d71;
+}
+td a:hover{
+  color: #090d71;
+}
+
+
+
+footer {
+  padding: 25px 0;
+  text-align: center;
+  width: 100%;
+  background: #D3D1D1;
+  overflow: hidden;
+  bottom: 0px;
+  margin-bottom: 0px;
+  background-color: #030303;
+  margin-top: 100px;
+  position: relative;
+}
+
+footer a {
+  font-size: 15px;
+  color: #555;
+}
+
+footer a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar {
+  margin-bottom: 0
+}

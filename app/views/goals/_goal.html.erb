@@ -1,0 +1,98 @@
+<!-- <script>
+  $(document).ready(function(){
+    $('.edit-goal').hide(0);
+  });
+</script> -->
+<% if @user == current_user %>
+  <tr class=info-row  id='<%= dom_id(goal) %>'>
+    <th class="row-header"><%= link_to goal.goal_name, user_goal_path(@user, goal), class: "table-link" %></th>
+    <td><%= number_to_currency(goal.amount) %></td>
+    <td><%= goal.location %></td>
+    <td><%= image_tag(goal.image.url(:normal), class: "img-responsive aspect") if goal.image? %></td>
+    <td>
+      <% if goal.location? %>
+        <div>
+          <div id="map" style='height: 200px; width:200px'></div>
+          <script>
+            handler = Gmaps.build('Google');
+            handler.buildMap({
+              provider: {
+                // pass in other Google Maps API options here
+                },
+                internal: {
+                  id: 'map'
+                }
+              },
+              function(){
+                markers = handler.addMarkers([
+                  {
+                    "lat": <%= goal.latitude %>,
+                    "lng": <%= goal.longitude %>,
+                    "infowindow": "<%= goal.goal_name %>"
+                  }
+                ]);
+                handler.bounds.extendWith(markers);
+                handler.fitMapToBounds();
+                }
+              );
+          </script>
+        </div>
+      <% end %>
+    </td>
+    <td>
+      <%= button_to "#{goal.mark}", user_mark_path(@user, goal), :class => "btn mark-button btn-xs btn-info", :method => :post, remote: true %>
+    </td>
+    <td>
+      <%= link_to "Edit", edit_user_goal_path(@user, goal), class: "edit-button btn btn-warning btn-xs"  %>
+      <%= link_to "Delete", user_path(current_user), method: :delete, class: "btn btn-danger btn-xs", data: {confirm: "Are you sure?"} %>
+    </td>
+  </tr>
+  <!-- <div class="edit-goal">
+    <%= render "goals/edit", goal: goal, user: @user %>
+  </div> -->
+<% else %>
+  <tr class=info-row id='<%= dom_id(goal) %>'>
+    <th class="row-header"><%= link_to goal.goal_name, user_goal_path(@user, goal), class: "table-link" %></th>
+    <td><%= number_to_currency(goal.amount) %></td>
+    <td><%= goal.location %></td>
+    <td><%= image_tag(goal.image.url(:normal), class: "img-responsive aspect") if goal.image? %></td>
+    <td>
+      <% if goal.location? %>
+        <div>
+          <div id="map" style='height: 200px; width:200px'></div>
+          <script>
+            handler = Gmaps.build('Google');
+            handler.buildMap({
+              provider: {
+                disableDefaultUI: true
+                // pass in other Google Maps API options here
+                },
+                internal: {
+                  id: 'map'
+                }
+              },
+              function(){
+                markers = handler.addMarkers([
+                  {
+                    "lat": <%= goal.latitude %>,
+                    "lng": <%= goal.longitude %>,
+                    "infowindow": "<%= goal.goal_name %>"
+                  }
+                ]);
+                handler.bounds.extendWith(markers);
+                handler.fitMapToBounds();
+                }
+              );
+          </script>
+        </div>
+      <% end %>
+    </td>
+    <td>
+      <% if goal.followed_by?(current_user) %>
+        <%= link_to "Following", user_goal_follow_path(@user, goal, goal.follow_for(current_user)), remote: true, method: :delete, class: 'following-button btn btn-warning' %>
+      <% else %>
+        <%= link_to "Follow", user_goal_follows_path(@user, goal), remote: true, method: :post, class: 'follow-button btn btn-primary outline' %>
+      <% end %>
+    </td>
+  </tr>
+<% end %>

@@ -1,0 +1,10 @@
+<h1>Edit Goal</h1>
+<%= simple_form_for [@user, goal] do |f| %>
+  <div class="text-left">
+    <%= f.input :goal_name, label: "Goal Name", placeholder: "i.e. buy a home, buy a car, go on vacation"%>
+    <%= f.input :amount, label: "Amount", placeholder: "i.e. 151.35"%>
+    <%= f.file_field :image %>
+    <%= f.input :location %>
+  </div>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

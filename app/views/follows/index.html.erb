@@ -1,0 +1,59 @@
+<div class="bg"></div>
+<div class="container" id="follow-information">
+  <h1>Followed Goals</h1>
+  <table class="table table-hover table-inverse">
+    <thead>
+      <tr class="table-header">
+        <th>Goal Name</th>
+        <td>User</td>
+        <td>Amount</td>
+        <td>Location</td>
+        <td>Image</td>
+        <td>Map</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @goals.each do |goal| %>
+        <div id='<%= dom_id(goal) %>'>
+          <tr class=info-row>
+            <th class="row-header"><%= goal.goal_name %></th>
+            <td><%= link_to goal.user.full_name, user_path(goal.user) %></td>
+            <td><%= number_to_currency(goal.amount) %></td>
+            <td><%= goal.location %></td>
+            <td><%= image_tag(goal.image.url(:normal), class: "img-responsive aspect") if goal.image? %></td>
+            <td>
+              <% if goal.location? %>
+                <div>
+                  <div id="map" style='height: 200px; width:200px'></div>
+                  <script>
+                    handler = Gmaps.build('Google');
+                    handler.buildMap({
+                      provider: {
+                        },
+                        internal: {
+                          id: 'map'
+                        }
+                      },
+                      function(){
+                        markers = handler.addMarkers([
+                          {
+                            "lat": <%= goal.latitude %>,
+                            "lng": <%= goal.longitude %>,
+                            "infowindow": "<%= goal.goal_name %>"
+                          }
+                        ]);
+                        handler.bounds.extendWith(markers);
+                        handler.fitMapToBounds();
+                        }
+                      );
+                  </script>
+                </div>
+              <% end %>
+            </td>
+          </tr>
+        </div>
+      <% end %>
+    <hr />
+  </tbody>
+</table>
+</div>

@@ -1,0 +1,21 @@
+<!-- <script>
+  $(document).ready(function(){
+    $('.edit-expense').hide(0);
+  });
+</script> -->
+
+<div id='<%= dom_id(expense) %>'>
+      <tr class="info-row">
+        <th><%= expense.expense_name %></th>
+        <td><%= number_to_currency(expense.amount) %></td>
+        <% if can? :manage, expense %>
+          <td>
+            <%= link_to "Edit", edit_user_expense_path(@user, expense), class: "edit-button btn btn-warning btn-xs"  %>
+            <%= link_to "Delete", user_expense_path(@user, expense), method: :delete, class: "btn btn-danger btn-xs", data: {confirm: "Are you sure?"} %>
+          </td>
+        <% end %>
+      </tr>
+  <!-- <div class="edit-expense">
+    <%= render "expenses/edit", expense: expense, user: @user %>
+  </div> -->
+</div>

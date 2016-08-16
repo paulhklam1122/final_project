@@ -1,0 +1,11 @@
+<div class="bg"></div>
+<div class="container">
+  <h1>Edit Property</h1>
+  <%= simple_form_for [@user, @property] do |f| %>
+    <div class="text-left">
+      <%= f.input :name, label: "Property Name", placeholder: "i.e. Principal Property, Investment Property, My Crib"%>
+      <%= f.input :value, label: "Property Value", placeholder: "375.85" %>
+    </div>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>

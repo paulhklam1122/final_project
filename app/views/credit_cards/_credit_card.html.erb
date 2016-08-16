@@ -1,0 +1,20 @@
+<!-- <script>
+  $(document).ready(function(){
+    $('.edit-credit-card').hide(0);
+  });
+</script> -->
+<div id='<%= dom_id(credit_card) %>'>
+  <tr class="info-row">
+    <th><%= credit_card.card_name %></th>
+    <td><%= number_to_currency(credit_card.monthly_balance) %></td>
+    <% if can? :manage, credit_card %>
+      <td>
+        <%= link_to "Edit", edit_user_credit_card_path(@user, credit_card), class: "edit-button btn btn-warning btn-xs"  %>
+        <%= link_to "Delete", user_credit_card_path(@user, credit_card), method: :delete, class: "btn btn-danger btn-xs", data: {confirm: "Are you sure?"} %>
+      </td>
+    <% end %>
+  </tr>
+  <!-- <div class="edit-credit-card">
+    <%#= render "credit_cards/edit", credit_card: credit_card, user: @user %>
+  </div> -->
+</div>

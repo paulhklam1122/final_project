@@ -1,0 +1,103 @@
+<div class="bg"></div>
+<div class="container" id="edit-information">
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <h1>Add Your Information</h1>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <%= link_to user_path(current_user), class: 'btn btn-primary', id: 'view-button' do %>
+          View Profile
+          <span class="glyphicon glyphicon-list"></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="tabbable boxed parentTabs">
+    <ul class="nav nav-pills nav-justified" id="dashboard_tabs">
+      <li class="active"><a data-toggle="tab" href="#info">User  Information</a></li>
+      <li><a data-toggle="tab" href="#accounts">Accounts</a></li>
+      <li><a data-toggle="tab" href="#expenses">Expenses</a></li>
+      <li><a data-toggle="tab" href="#goals">Goals</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="info" class="tab-pane fade in active">
+        <div class="tabbable">
+          <ul class="nav nav-tabs" id="info_tabs">
+              <li><a href="#info_personal" data-toggle="tab">Personal Information</a></li>
+              <li><a href="#info_profile" data-toggle="tab">Profile Information</a></li>
+          </ul>
+          <div class="tab-content">
+            <div id="info_personal" class="tab-pane">
+              <h3>Personal Information</h3>
+              <%= render "/users/info" %>
+            </div>
+            <div id="info_profile" class="tab-pane">
+              <h3>Profile Information</h3>
+              <%= render "/profiles/form" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="accounts" class="tab-pane">
+        <div class="tabbable">
+          <ul class="nav nav-tabs" id="accounts_tabs">
+              <li><a href="#accounts_bank_accounts" data-toggle="tab">Bank Accounts</a></li>
+              <li><a href="#accounts_property" data-toggle="tab">Property</a></li>
+              <li><a href="#accounts_loan_accounts" data-toggle="tab">Loan/Mortgage</a></li>
+              <li><a href="#accounts_credit_cards" data-toggle="tab">Credit Cards</a></li>
+          </ul>
+          <div class="tab-content">
+            <div id="accounts_bank_accounts" class="tab-pane">
+              <h3>Add a Bank/Investment Account</h3>
+              <%= render "/bank_accounts/form" %>
+            </div>
+            <div id="accounts_property" class="tab-pane">
+              <h3>Add a Property</h3>
+              <%= render "/properties/form" %>
+            </div>
+            <div id="accounts_loan_accounts" class="tab-pane">
+              <h3>Add a Loan/Mortgage</h3>
+              <%= render "/loan_accounts/form" %>
+            </div>
+            <div id="accounts_credit_cards" class="tab-pane">
+              <h3>Add a Credit Card</h3>
+              <%= render "/credit_cards/form" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="expenses" class="tab-pane">
+        <div class="tabbable">
+          <ul class="nav nav-tabs" id="expenses_tabs">
+            <li><a href="#expenses_expenses" data-toggle="tab">Expenses</a></li>
+          </ul>
+          <div class="tab-content">
+            <div id="expenses_expenses" class="tab-pane">
+              <h3>Add an Expense</h3>
+              <%= render "/expenses/form" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="goals" class="tab-pane">
+        <div class="tabbable">
+          <ul class="nav nav-tabs" id="goals_tabs">
+            <li><a href="#goals_goals" data-toggle="tab">Goals</a></li>
+          </ul>
+          <div class="tab-content">
+            <div id="goals_goals" class="tab-pane">
+              <h3>Add a Goal</h3>
+              <%= render "/goals/form" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

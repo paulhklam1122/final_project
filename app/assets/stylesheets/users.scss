@@ -1,0 +1,373 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bg {
+  background-image: image-url("/assets/user-page.jpg");
+  position: fixed;
+  width: 100%;
+  height: 100%; /*same height as jumbotron */
+  top: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover;
+  margin: 0px;
+  background-position: top
+}
+
+.jumbotron {
+  height: 100%;
+  color: white;
+  text-shadow: #444 0 1px 1px;
+  background: transparent;
+  margin-bottom: -250px;
+  -webkit-transition: .15s ease-in-out;
+  -moz-transition: .15s ease-in-out;
+  -o-transition: .15s ease-in-out;
+  -webkit-transition-property: background-position;
+  -moz-transition-property: background-position;
+  -o-transition-property: background-position;
+}
+
+.jumbotron {
+  min-height: 700px;
+  p {
+    font-size: 20px;
+  }
+}
+
+#user-jumbotron {
+  background: transparent;
+  min-height: 300px;
+  margin-bottom: auto;
+}
+
+#information {
+  background-color: white;
+  background-opacity: 0.5;
+  border: 2px grey solid;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-shadow: 3px 3px 3px #888888;
+  background: rgba(#000000, 0.45);
+  color: white;
+  p {
+    font-size: 20px;
+  }
+}
+
+#index-information {
+  background-color: white;
+  background-opacity: 0.5;
+  border: 2px grey solid;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-shadow: 3px 3px 3px #888888;
+  background: rgba(#000000, 0.45);
+  color: white;
+  min-height: 1000px;
+  margin-top: 30px;
+  p {
+    font-size: 20px;
+  }
+}
+
+#edit-information {
+  background-color: white;
+  background-opacity: 0.5;
+  border: 2px grey solid;
+  border-radius: 10px;
+  padding-bottom: 20px;
+  box-shadow: 3px 3px 3px #888888;
+  background: rgba(#000000, 0.45);
+  color: white;
+  min-height: 605px;
+  p {
+    font-size: 20px;
+  }
+}
+
+#goal-information {
+  background-color: white;
+  background-opacity: 0.5;
+  border: 2px grey solid;
+  border-radius: 10px;
+  padding-bottom: 20px;
+  box-shadow: 3px 3px 3px #888888;
+  background: rgba(#000000, 0.45);
+  color: white;
+  min-height: 605px;
+  p {
+    font-size: 20px;
+  }
+}
+
+#password-reset-information {
+  background-color: white;
+  background-opacity: 0.5;
+  border: 2px grey solid;
+  border-radius: 10px;
+  padding-bottom: 20px;
+  box-shadow: 3px 3px 3px #888888;
+  background: rgba(#000000, 0.45);
+  color: white;
+  min-height: 614px;
+  p {
+    font-size: 20px;
+  }
+}
+
+#user-information {
+  background-color: white;
+  background-opacity: 0.5;
+  border: 2px grey solid;
+  border-radius: 10px;
+  padding-bottom: 20px;
+  box-shadow: 3px 3px 3px #888888;
+  background: rgba(#000000, 0.45);
+  color: white;
+  min-height: 635px;
+  p {
+    font-size: 20px;
+  }
+}
+
+#follow-information {
+  background-color: white;
+  background-opacity: 0.5;
+  border: 2px grey solid;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-shadow: 3px 3px 3px #888888;
+  background: rgba(#000000, 0.45);
+  color: white;
+  margin-top: 30px;
+
+  min-height: 605px;
+  p {
+    font-size: 20px;
+  }
+}
+
+.tabbable li a {
+  color: white;
+}
+
+.tabbable li a:hover {
+  color: black;
+}
+
+.section-dropdown {
+  margin-bottom: 15px;
+}
+
+.infinite-table a {
+  color: white;
+}
+
+#personal-expenses-goals {
+  margin-top: 10px;
+}
+
+#calculators {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+#friendlyreminder {
+  font-size: 10px;
+}
+
+#goodComparison {
+  color: green
+}
+
+#badComparison {
+  color: red;
+}
+
+.inner-content {
+  border: 2px grey solid;
+  padding: 0px 50px 30px 50px;
+}
+
+
+h1.jumbotron-text {
+  margin-top: 50px;
+  font-family: 'Open Sans', 'Verdana', 'Helvetica', sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: none;
+  color: white;
+}
+
+h5.jumbotron-text {
+  margin-top: 50px;
+  font-family: 'Open Sans', 'Verdana', 'Helvetica', sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: none;
+  color: white;
+}
+
+.page-header h1 {
+  margin-top: 0
+}
+
+h1.container.page-header {
+  float: left;
+}
+
+#user {
+  margin-bottom: 20px;
+}
+
+#return-to-top {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: #449D44;
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top:hover {
+  background: #28e908;
+}
+
+#return-to-top:hover i {
+  color: #fff;
+  top: 5px;
+}
+
+#return-to-bottom {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: #449D44;
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-bottom i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#return-to-top:hover {
+  background: #28e908;
+}
+
+#return-to-top:hover i {
+  color: #fff;
+  top: 5px;
+}
+
+#bar-graph {
+  min-height: 400px;
+}
+
+.following-button:hover {
+  background-color: red;
+}
+
+table tr:hover {
+  color: black;
+}
+
+.table-header:hover {
+  color: white
+}
+
+.tab-pane {
+  color: white
+}
+
+#mortgagecalc input[type=text] {
+    color: black;
+}
+
+#retirementcalc input[type=text] {
+  color: black;
+}
+
+.smpc-monthlypayment {
+  margin-top:15px;
+  font-size:24px;
+  color:#ca0000;
+  background-color: rgba(#ffffff, 0.6);
+
+}
+
+.smpc-friendlyreminder {
+  display:none;
+}
+
+#monthlyPayment {
+  color: blue;
+}
+
+.smpc-div {
+  background: transparent;
+  border:1px solid #cccccc;
+  padding:15px;
+}
+
+.smpc-error {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color:#ca0000;
+}

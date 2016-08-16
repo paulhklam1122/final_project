@@ -1,0 +1,9 @@
+<%= simple_form_for [@user, @profile] do |f| %>
+  <div class="text-left">
+    <%= f.input :income, label: "Annual Income", placeholder: "i.e. 50000", class: "income", :value => (number_with_precision(f.object.income, :precision => 2) || 0) %>
+    <p>Upload a Profile Picture</p>
+    <%= f.file_field :avatar %>
+  </div>
+  <hr />
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

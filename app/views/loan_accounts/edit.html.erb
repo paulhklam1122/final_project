@@ -1,0 +1,12 @@
+<div class="bg"></div>
+<div class="container" id="edit-information">
+  <h1>Edit Loan Account</h1>
+  <%= simple_form_for [@user, @loan_account] do |f| %>
+    <div class="text-left">
+      <%= f.input :loan_name, label: "Loan Name", placeholder: "i.e. student loan, mortgage"%>
+      <%= f.input :balance, label: "Balance", placeholder: "462151.85" %>
+      <%= f.input :monthly_payment, label: "Monthly Payment", placeholder: "1000" %>
+    </div>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>

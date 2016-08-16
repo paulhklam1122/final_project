@@ -1,0 +1,5 @@
+if ($('#<%= dom_id(@goal) %> .mark-button').val() === 'Not Achieved') {
+  $('#<%= dom_id(@goal) %> .mark-button').val('Achieved')
+} else {
+  $('#<%= dom_id(@goal) %> .mark-button').val('Not Achieved')
+}

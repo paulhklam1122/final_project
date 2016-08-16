@@ -1,0 +1,27 @@
+<div class="smpc-div" id="mortgagecalc">
+  <form name=mortgagecalc method=POST class="mortgagecalc">
+    <div class="form-group">
+      <label for="mortgage-amount">How much do you want to borrow?</label>
+      <input type=text onkeypress="return validNumber(event)" name=loan id="mortgage-amount"> <span class="smpc-error" id="loanError"></span>
+    </div>
+    <div class="form-group">
+      <label for="mortgage-term">What will be the term of this mortgage (in years)?</label>
+      <input type=text onkeypress="return validNumber(event)" name=years id="mortgage-term"> <span class="smpc-error" id="yearsError"></span>
+    </div>
+    <div class="form-group">
+      <label for="mortgage-interest">What will be the interest rate?</label>
+      <input type=text onkeypress="return validNumber(event)" name=rate id="mortgage-interest"> <span class="smpc-error" id="rateError"></span>
+    </div>
+    <div class="form-group">
+      <input type=button onClick="return myPayment()" value=Calculate class="btn btn-success btn-xs">  <input type=button onClick="return myPaymentReset()" value=Reset class="btn btn-warning btn-xs">
+    </div>
+  </form>
+  <small>Instructions: Enter numbers and decimal points. No commas or other characters.</small>
+  <p class="smpc-monthlypayment" id="monthlyPayment"></p>
+  <p class="smpc-monthlypayment" id="goodComparison"></p>
+  <p class="smpc-monthlypayment" id="badComparison"></p>
+  <p class="smpc-monthlypayment" id="monthlyIncome" hidden><%= monthly_income %></p>
+  <p class="smpc-monthlypayment" id="monthlyMortgagePayments" hidden><%= monthly_mortgage_payments %></p>
+  <p class="smpc-monthlypayment" id="monthlyLoanPayments" hidden><%= monthly_loan_payments %></p>
+  <p class="smpc-friendlyreminder" id="friendlyReminder">This is your principal + interest payment, or in other words, what you send to the bank each month. But remember, you will also have to budget for homeowners insurance, real estate taxes, and if you are unable to afford a 20% down payment, Canada Mortgage and Housing Corporation (CMHC). These additional costs could increase your monthly outlay by as much 50%, sometimes more.</p>
+</div>

@@ -1,0 +1,13 @@
+<div class="bg"></div>
+<div class="container" id="user-information">
+  <h1>Create an Account</h1>
+  <%= simple_form_for @user do |f| %>
+    <%= f.input :first_name, label: "First Name" %>
+    <%= f.input :last_name, label: "Last Name" %>
+    <%= f.input :email, label: "Email" %>
+    <%= f.input :password, label: "Password", required: true %>
+    <%= f.input :password_confirmation, label: "Password Confirmation", required: true %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+  <hr />
+</div>

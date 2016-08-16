@@ -1,0 +1,20 @@
+<!-- <script>
+  $(document).ready(function(){
+    $('.edit-property').hide(0);
+  });
+</script> -->
+<div id='<%= dom_id(property) %>'>
+  <tr class="info-row">
+    <th><%= property.name %></th>
+    <td><%= number_to_currency(property.value) %></td>
+    <% if can? :manage, property %>
+      <td>
+        <%= link_to "Edit", edit_user_property_path(@user, property), class: "edit-button btn btn-warning btn-xs"  %>
+        <%= link_to "Delete", user_property_path(@user, property), method: :delete, class: "btn btn-danger btn-xs", data: {confirm: "Are you sure?"} %>
+      </td>
+    <% end %>
+  </tr>
+  <!-- <div class="edit-property">
+    <%= render "properties/edit", property: property, user: @user %>
+  </div> -->
+</div>

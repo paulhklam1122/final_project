@@ -1,0 +1,5 @@
+if ($('#<%= dom_id(@goal) %> .btn').hasClass('follow-button')){
+  $('#<%= dom_id(@goal) %> .btn').html("Following").removeClass('follow-button btn-primary outline').addClass('following-button btn-warning');
+} else {
+  $('#<%= dom_id(@goal) %> .btn').html("Follow").removeClass('following-button btn-warning').addClass('follow-button btn-primary outline');
+}

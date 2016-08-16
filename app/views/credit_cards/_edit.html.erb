@@ -1,0 +1,8 @@
+<h1>Edit Credit Card</h1>
+<%= simple_form_for [@user, credit_card] do |f| %>
+<div class="text-left">
+    <%= f.input :card_name, label: "Card Name", placeholder: "i.e. RBC Visa, TD First Class"%>
+    <%= f.input :monthly_balance, label: "Monthy Balance", placeholder: "441.85" %>
+</div>
+<%= f.button :submit, "Update Credit Card", class: "btn btn-primary" %>
+<% end %>

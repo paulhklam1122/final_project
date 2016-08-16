@@ -1,0 +1,7 @@
+<%= simple_form_for [@user, @expense] do |f| %>
+  <div class="text-left">
+    <%= f.input :expense_name, label: "Expense Name", placeholder: "i.e. groceries, tennis lessons"%>
+    <%= f.input :amount, label: "Amount (monthly)", placeholder: "i.e. 151.35"%>
+  </div>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,21 @@
+<!-- <script>
+  $(document).ready(function(){
+    $('.edit-bank-account').hide(0);
+  });
+</script> -->
+<div id='<%= dom_id(bank_account) %>'>
+  <tr class=info-row>
+    <th class="row-header"><%= bank_account.bank_name %></th>
+    <td><%= bank_account.account_type %></td>
+    <td><%= number_to_currency(bank_account.account_balance) %></td>
+    <% if can? :manage, bank_account %>
+      <td>
+        <%= link_to "Edit", edit_user_bank_account_path(@user, bank_account), class: "edit-button btn btn-warning btn-xs"  %>
+        <%= link_to "Delete", user_bank_account_path(@user, bank_account), method: :delete, class: "btn btn-danger btn-xs", data: {confirm: "Are you sure?"} %>
+      </td>
+    <% end %>
+  </tr>
+  <!-- <div class="edit-bank-account">
+    <%= render "bank_accounts/edit", bank_account: bank_account, user: @user %>
+  </div> -->
+</div>

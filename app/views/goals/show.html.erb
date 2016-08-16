@@ -1,0 +1,40 @@
+<div class="bg"></div>
+<div class="container text-center content-center" id="goal-information">
+  <h1><%= @goal.goal_name %></h1>
+  <h4>Amount: <%= number_to_currency(@goal.amount) %></h4>
+  <% if @goal.location? %>
+    <div>
+      <div id="map" style='height: 400px; width:800px'></div>
+      <script>
+        handler = Gmaps.build('Google');
+        handler.buildMap({
+          provider: {
+            // pass in other Google Maps API options here
+            },
+            internal: {
+              id: 'map'
+            }
+          },
+          function(){
+            markers = handler.addMarkers([
+              {
+                "lat": <%= @goal.latitude %>,
+                "lng": <%= @goal.longitude %>,
+                "infowindow": "<%= @goal_name %>"
+              }
+            ]);
+            handler.bounds.extendWith(markers);
+            handler.fitMapToBounds();
+            }
+          );
+      </script>
+    </div>
+  <% end %>
+  <br />
+  <br />
+  <br />
+  <br />
+  <div>
+    <%= image_tag(@goal.image.url(:large), class: "img-responsive aspect") if @goal.image? %>
+  </div>
+</div>

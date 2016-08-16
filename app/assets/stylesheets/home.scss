@@ -1,0 +1,136 @@
+body {
+  margin-left: 0;
+}
+
+.home-bg {
+  background-image: image-url("/assets/home.jpg");
+  position: fixed;
+  width: 100%;
+  height: 100%; /*same height as jumbotron */
+  top:0;
+  left:0;
+  z-index: -1;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover;
+  margin: 0px;
+}
+
+.jumbotron {
+  height: 500px;
+  color: white;
+  text-shadow: #444 0 1px 1px;
+  background: transparent;
+  margin-bottom: -250px;
+  -webkit-transition: .15s ease-in-out;
+  -moz-transition: .15s ease-in-out;
+  -o-transition: .15s ease-in-out;
+  -webkit-transition-property: background-position;
+  -moz-transition-property: background-position;
+  -o-transition-property: background-position;
+}
+
+.btn.signin {
+  text-align: center;
+  vertical-align: middle;
+  border: 2px solid white;
+  border-radius: 70px;
+  width: 250px;
+  padding: 30px;
+  color: #FBFBFB;
+  text-shadow: 0px 0px;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-family: 'Open Sans', 'Verdana', 'Helvetica', sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  margin-top: 60px;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+
+.btn.signin:hover {
+  background-color: #FBFBFB;
+  color: black;
+}
+
+.btn.signup {
+  text-align: center;
+  vertical-align: middle;
+  border: 2px solid white;
+  border-radius: 70px;
+  width: 250px;
+  padding: 30px;
+  color: #FBFBFB;
+  text-shadow: 0px 0px;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-family: 'Open Sans', 'Verdana', 'Helvetica', sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  margin-top: 60px;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+.btn.signup:hover {
+  background-color: #FBFBFB;
+  color: black;
+}
+
+.jumbotron {
+  min-height: 700px;
+  p {
+    font-size: 20px;
+  }
+}
+
+
+h1.jumbotron-text {
+  margin-top: 50px;
+  font-family: 'Open Sans', 'Verdana', 'Helvetica', sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: none;
+  color: white;
+}
+
+h5.jumbotron-text {
+  margin-top: 50px;
+  font-family: 'Open Sans', 'Verdana', 'Helvetica', sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: none;
+  color: white;
+}
+
+.button-left {
+  margin-top: -20px;
+}
+
+.button-right {
+  margin-top: -20px;
+}
+
+#about {
+  background-image: image-url("paper.png");
+  padding: 10px 200px 110px 200px;
+  width: 100%;
+  overflow: hidden;
+  left: 0;
+  position: relative;
+  bottom: -100px;
+}

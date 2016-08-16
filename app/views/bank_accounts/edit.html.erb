@@ -1,0 +1,12 @@
+<div class="bg"></div>
+<div class="container" id="edit-information">
+  <h1>Edit Bank Account</h1>
+  <%= simple_form_for [@user, @bank_account] do |f| %>
+    <div class="text-left">
+      <%= f.input :bank_name, label: "Bank Name", placeholder: "Mickey Mouse Bank" %>
+      <%= f.input :account_type, label: "Account Type", placeholder: "chequeing, savings, TFSA" %>
+      <%= f.input :account_balance, label: "Account Balance", placeholder: "375.85" %>
+    </div>
+    <%= f.button :submit, "Update Bank Account", class: "btn btn-primary" %>
+  <% end %>
+</div>

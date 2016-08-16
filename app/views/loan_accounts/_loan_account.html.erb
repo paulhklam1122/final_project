@@ -1,0 +1,21 @@
+<!-- <script>
+  $(document).ready(function(){
+    $('.edit-loan-account').hide(0);
+  });
+</script> -->
+<div id='<%= dom_id(loan_account) %>'>
+  <tr class="info-row">
+    <th><%= loan_account.loan_name %></th>
+    <td><%= number_to_currency(loan_account.balance) %></td>
+    <td><%= number_to_currency(loan_account.monthly_payment) %></td>
+    <% if can? :manage, loan_account %>
+      <td>
+        <%= link_to "Edit", edit_user_loan_account_path(@user, loan_account), class: "edit-button btn btn-warning btn-xs"  %>
+        <%= link_to "Delete", user_loan_account_path(@user, loan_account), method: :delete, class: "btn btn-danger btn-xs", data: {confirm: "Are you sure?"} %>
+      </td>
+    <% end %>
+  </tr>
+  <!-- <div class="edit-loan-account">
+    <%= render "loan_accounts/edit", loan_account: loan_account, user: @user %>
+  </div> -->
+</div>

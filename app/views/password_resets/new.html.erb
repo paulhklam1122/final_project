@@ -1,0 +1,14 @@
+<div class="home-bg"></div>
+<div class="container" id="password-reset-information">
+  <h1>Reset Password</h1>
+  <%= form_tag password_resets_path, :method => :post do %>
+    <div class="form-group">
+      <%= label_tag :email %>
+      <%= email_field_tag :email, "", class: "form-control" %>
+    </div>
+    <div class="text-center">
+      <div class="actions"><%= submit_tag "Reset Password", class: "btn btn-danger btn-custom"%>
+      </div>
+    </div>
+  <% end %>
+</div>

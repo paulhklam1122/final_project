@@ -1,0 +1,16 @@
+<div class="bg"></div>
+<div class="container">
+  <div id="index-information">
+    <h1 id="all-students-header" class="text-center">All Users</h1>
+    <div class="infinite-table">
+      <div class="render">
+        <%= render :partial => 'users', :object => @users %>
+      </div>
+      <p class="pagination">
+        <%= link_to_next_page(@users, "", :remote => true) %>
+      </p>
+    </div>
+  </div>
+</div>
+<a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+<a href="javascript:" id="return-to-bottom"><i class="icon-chevron-down"></i></a>

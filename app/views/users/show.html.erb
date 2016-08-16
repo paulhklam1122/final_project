@@ -1,0 +1,272 @@
+<% if @user == current_user %>
+  <div class="bg"></div>
+  <div class="container">
+    <div class="jumbotron" id="user-jumbotron">
+      <div class="text-center">
+        <h1 class="jumbotron-text">Welcome Back <%= current_user.first_name %>!</h1>
+        <h5 class="jumbotron-text">Ready to make some more intelligent financial decisions today?</h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="information">
+    <div class="row">
+      <div id=pie-chart class="col-md-6 col-sm-12">
+        <%= high_chart("my_id4", @chart) do |c| %>
+        <%= raw "options.tooltip.formatter = function() {return '<b>'+ this.point.name +'</b>: '+ '$' + this.y;}"  %>
+        <%= raw "options.plotOptions.pie.dataLabels.formatter = function() { if (this.y > 5) return this.point.name; }"  %>
+        <% end %>
+      </div>
+      <div id=bar-graph class="col-md-6 col-sm-12">
+        <%= high_chart("my_id5", @graph) do |c| %>
+        <%= raw "options.tooltip.formatter = function() {return '<b>'+ this.point.name +'</b>: '+ '$' + this.y;}"  %>
+        <%= raw "options.plotOptions.series.point.events.click = function() { location.href='http://business.financialpost.com/business-insider/this-guy-cut-1000-from-his-household-expenses-in-10-weeks'; }" %>
+      <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12 text-center">
+        <h3>Assets</h3>
+        <p>(Things that you have or own)</p>
+        <p><strong><%= number_to_currency(total_assets) %></strong></p>
+        <h3>Debt</h3>
+        <p>(Money that you owe)</p>
+        <p><strong><%= number_to_currency(total_debt) %></strong></p>
+      </div>
+      <div class="col-md-6 col-sm-12 text-center">
+        <h3>Monthly Income</h3>
+        <p>(Money you are making!)</p>
+        <% if @user.profile.income? %>
+        <p><strong><%= number_to_currency(monthly_income) %></strong></p>
+        <% else %>
+        <p>Please enter an income in the Edit Profile page</p>
+        <% end %>
+        <h3>Monthly Expenditures</h3>
+        <p>(Money you are spending!)</p>
+        <p><strong><%= number_to_currency(monthly_expenditures) %></strong></p>
+      </div>
+    </div>
+    <div id="accounts-section" class="inner-content">
+      <h2 class="text-center">Accounts</h2>
+      <a class="btn btn-success text-center section-dropdown" data-toggle="collapse" href="#bank_accounts" aria-expanded="false" aria-controls="collapseExample" style="width:100%">Bank & Investment Accounts&nbsp;&nbsp;<span class="caret"></span></a>
+      <div class="collapse" id="bank_accounts">
+        <div class="card card-block">
+          <div id="bank_account">
+            <%= link_to edit_user_path(current_user), class: 'btn btn-primary', id: 'add-bank-account-button' do %>
+              <span class="glyphicon glyphicon-plus"></span>
+              Add a Bank Account
+            <% end %>
+            <table class="table table-hover table-inverse">
+              <thead>
+                <tr class="table-header">
+                  <th>Bank Name</th>
+                  <th>Account Type</th>
+                  <th>Account Balance</th>
+                  <th>Action Options</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @bank_accounts.each do |bank_account| %>
+                  <%= render "bank_accounts/bank_account", bank_account: bank_account %>
+                <% end %>
+              </tbody>
+            </table>
+            <hr />
+          </div>
+        </div>
+      </div>
+      <a class="btn btn-success text-center section-dropdown" data-toggle="collapse" href="#properties" aria-expanded="false" aria-controls="collapseExample" style="width:100%">Properties&nbsp;&nbsp;<span class="caret"></span></a>
+      <div class="collapse" id="properties">
+        <div class="card card-block">
+          <div id="properties">
+            <%= link_to edit_user_path(current_user), class: 'btn btn-primary', id: 'add-property-button' do %>
+              <span class="glyphicon glyphicon-plus"></span>
+              Add a Property
+            <% end %>
+            <table class="table table-hover table-inverse">
+              <thead>
+                <tr class="table-header">
+                  <th>Property Name</th>
+                  <td>Property Value</td>
+                  <td>Action Options</td>
+                </tr>
+              </thead>
+              <tbody>
+              <% @properties.each do |property| %>
+                <%= render "properties/property", property: property %>
+              <% end %>
+              </tbody>
+            </table>
+            <hr />
+          </div>
+        </div>
+      </div>
+      <a class="btn btn-danger text-center section-dropdown" data-toggle="collapse" href="#loans" aria-expanded="false" aria-controls="collapseExample" style="width:100%">Loans & Mortgages&nbsp;&nbsp;<span class="caret"></span></a>
+      <div class="collapse" id="loans">
+        <div class="card card-block">
+          <div id="loans">
+            <%= link_to edit_user_path(current_user), class: 'btn btn-primary', id: 'add-loan-account-button' do %>
+              <span class="glyphicon glyphicon-plus"></span>
+              Add a Loan/Mortgage Account
+            <% end %>
+            <table class="table table-hover table-inverse">
+              <thead>
+                <tr class="table-header">
+                  <th>Loan/Mortgage Name</th>
+                  <td>Balance</td>
+                  <td>Action Options</td>
+                </tr>
+              </thead>
+              <tbody>
+              <% @loan_accounts.each do |loan_account| %>
+                <%= render "loan_accounts/loan_account", loan_account: loan_account %>
+              <% end %>
+              </tbody>
+            </table>
+            <hr />
+          </div>
+        </div>
+      </div>
+      <a class="btn btn-danger text-center section-dropdown" data-toggle="collapse" href="#credit_cards" aria-expanded="false" aria-controls="collapseExample" style="width:100%">Credit Cards&nbsp;&nbsp;<span class="caret"></span></a>
+      <div class="collapse" id="credit_cards">
+        <div class="card card-block">
+          <div id="credit_cards">
+            <%= link_to edit_user_path(current_user), class: 'btn btn-primary', id: 'add-credit-card-button' do %>
+              <span class="glyphicon glyphicon-plus"></span>
+              Add a Credit Card
+            <% end %>
+            <table class="table table-hover table-inverse">
+              <thead>
+                <tr class="table-header">
+                  <th>Credit Card Name</th>
+                  <td>Monthly Balance</td>
+                  <td>Action Options</td>
+                </tr>
+              </thead>
+              <tbody>
+                <% @credit_cards.each do |credit_card| %>
+                  <%= render "credit_cards/credit_card", credit_card: credit_card %>
+                <% end %>
+              </tbody>
+            </table>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="personal-expenses-goals" class="inner-content">
+      <h2 class="text-center">Personal Expenses & Goals</h2>
+      <a class="btn btn-danger text-center section-dropdown" data-toggle="collapse" href="#expenses" aria-expanded="false" aria-controls="collapseExample" style="width:100%">Expenses&nbsp;&nbsp;<span class="caret"></span></a>
+      <div class="collapse" id="expenses">
+        <div class="card card-block">
+          <div id="expense">
+            <%= link_to edit_user_path(current_user), class: 'btn btn-primary', id: 'add-expense-button' do %>
+              <span class="glyphicon glyphicon-plus"></span>
+              Add an Expense
+            <% end %>
+            <table class="table table-hover table-inverse">
+              <thead>
+                <tr class="table-header">
+                  <th>Expense Name</th>
+                  <td>Amount</td>
+                  <td>Action Options</td>
+                </tr>
+              </thead>
+              <tbody>
+                <% @expenses.each do |expense| %>
+                  <%= render "expenses/expense", expense: expense %>
+                <% end %>
+              </tbody>
+            </table>
+            <hr />
+          </div>
+        </div>
+      </div>
+      <a class="btn btn-info text-center section-dropdown" data-toggle="collapse" href="#goals" aria-expanded="false" aria-controls="collapseExample" style="width:100%">Goals&nbsp;&nbsp;<span class="caret"></span></a>
+      <div class="collapse" id="goals">
+        <div class="card card-block">
+          <div id="goal">
+            <%= link_to edit_user_path(current_user), class: 'btn btn-primary', id: 'add-goal-button' do %>
+              <span class="glyphicon glyphicon-plus"></span>
+              Add a Goal
+            <% end %>
+            <table class="table table-hover table-inverse">
+              <thead>
+                <tr class="table-header">
+                  <th>Goal Name</th>
+                  <td>Amount</td>
+                  <td>Location</td>
+                  <td>Image</td>
+                  <td>Map</td>
+                  <td>Status</td>
+                  <td>Action Options</td>
+                </tr>
+              </thead>
+              <tbody>
+                <% @goals.each do |goal| %>
+                  <%= render "goals/goal", goal: goal %>
+                <% end %>
+              </tbody>
+            </table>
+          <hr />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="calculators" class="inner-content">
+      <h2 class="text-center">Finance Calculators</h2>
+      <div id="mortgage-calculator">
+        <a class="btn btn-info text-center section-dropdown" data-toggle="collapse" href="#mortgage_calculator" aria-expanded="false" aria-controls="collapseExample" style="width:100%">Mortgage Calculator&nbsp;&nbsp;<span class="caret"></span></a>
+        <div class="collapse" id="mortgage_calculator">
+          <div class="card card-block">
+            <div id="mortgage-calculator">
+              <%= render "/users/mortgage_calculator" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="retirement-calculator">
+        <a class="btn btn-info text-center section-dropdown" data-toggle="collapse" href="#retirement_calculator" aria-expanded="false" aria-controls="collapseExample" style="width:100%">Retirement Calculator&nbsp;&nbsp;<span class="caret"></span></a>
+        <div class="collapse" id="retirement_calculator">
+          <div class="card card-block">
+            <div id="retirement-calculator">
+              <%= render "/users/retirement_calculator" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <div class="bg"></div>
+  <div class="container">
+    <div class="text-center container" id="user-information">
+      <h1 class="jumbotron-text">Check out <%= @user.first_name %>'s Goals!</h1>
+      <a class="btn btn-info text-center section-dropdown section-dropdown" data-toggle="collapse" href="#goals" aria-expanded="false" aria-controls="collapseExample" style="width:100%">Goals&nbsp;&nbsp;<span class="caret"></span></a>
+      <div class="collapse" id="goals">
+        <div class="card card-block">
+          <div id="goal">
+            <table class="table table-hover table-inverse">
+              <thead>
+                <tr class="table-header">
+                  <th>Goal Name</th>
+                  <td>Amount</td>
+                  <td>Location</td>
+                  <td>Image</td>
+                  <td>Map</td>
+                  <td>Follow Status</td>
+                </tr>
+              </thead>
+              <tbody>
+                <% @goals.each do |goal| %>
+                  <%= render "goals/goal", goal: goal %>
+                <% end %>
+                <hr />
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
