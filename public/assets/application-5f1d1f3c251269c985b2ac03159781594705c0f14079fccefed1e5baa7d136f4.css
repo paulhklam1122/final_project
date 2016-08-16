@@ -8788,21 +8788,21 @@ button.close {
     display: none !important;
   }
 }
-/* line 5, /Users/Paul/codecore-bootcamp/rails/final_project/app/assets/stylesheets/bootstrap-generators.scss */
+/* line 5, /Users/Paul/codecore-bootcamp/rails/savvy_saver/app/assets/stylesheets/bootstrap-generators.scss */
 body {
   padding-top: 60px;
 }
 
-/* line 10, /Users/Paul/codecore-bootcamp/rails/final_project/app/assets/stylesheets/bootstrap-generators.scss */
+/* line 10, /Users/Paul/codecore-bootcamp/rails/savvy_saver/app/assets/stylesheets/bootstrap-generators.scss */
 .page-header a.btn {
   float: right;
 }
-/* line 14, /Users/Paul/codecore-bootcamp/rails/final_project/app/assets/stylesheets/bootstrap-generators.scss */
+/* line 14, /Users/Paul/codecore-bootcamp/rails/savvy_saver/app/assets/stylesheets/bootstrap-generators.scss */
 .page-header a.btn + a.btn {
   margin-right: 8px;
 }
 
-/* line 19, /Users/Paul/codecore-bootcamp/rails/final_project/app/assets/stylesheets/bootstrap-generators.scss */
+/* line 19, /Users/Paul/codecore-bootcamp/rails/savvy_saver/app/assets/stylesheets/bootstrap-generators.scss */
 input[type="radio"], input[type="checkbox"] {
   width: initial;
   height: initial;
@@ -18144,7 +18144,7 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
-/* line 4, /Users/Paul/codecore-bootcamp/rails/final_project/app/assets/stylesheets/bootstrap_overrides.scss */
+/* line 4, /Users/Paul/codecore-bootcamp/rails/savvy_saver/app/assets/stylesheets/bootstrap_overrides.scss */
 .btn {
   padding: 14px 24px;
   border: 0 none;
@@ -18154,47 +18154,47 @@ button.close {
   border-radius: 24px;
 }
 
-/* line 13, /Users/Paul/codecore-bootcamp/rails/final_project/app/assets/stylesheets/bootstrap_overrides.scss */
+/* line 13, /Users/Paul/codecore-bootcamp/rails/savvy_saver/app/assets/stylesheets/bootstrap_overrides.scss */
 .btn:focus, .btn:active:focus, .btn.active:focus {
   outline: 0 none;
 }
 
-/* line 17, /Users/Paul/codecore-bootcamp/rails/final_project/app/assets/stylesheets/bootstrap_overrides.scss */
+/* line 17, /Users/Paul/codecore-bootcamp/rails/savvy_saver/app/assets/stylesheets/bootstrap_overrides.scss */
 .btn-primary {
   background: #0099cc;
   color: #ffffff;
 }
 
-/* line 22, /Users/Paul/codecore-bootcamp/rails/final_project/app/assets/stylesheets/bootstrap_overrides.scss */
+/* line 22, /Users/Paul/codecore-bootcamp/rails/savvy_saver/app/assets/stylesheets/bootstrap_overrides.scss */
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
   background: #33a6cc;
 }
 
-/* line 26, /Users/Paul/codecore-bootcamp/rails/final_project/app/assets/stylesheets/bootstrap_overrides.scss */
+/* line 26, /Users/Paul/codecore-bootcamp/rails/savvy_saver/app/assets/stylesheets/bootstrap_overrides.scss */
 .btn-primary:active, .btn-primary.active {
   background: #007299;
   box-shadow: none;
 }
 
-/* line 31, /Users/Paul/codecore-bootcamp/rails/final_project/app/assets/stylesheets/bootstrap_overrides.scss */
+/* line 31, /Users/Paul/codecore-bootcamp/rails/savvy_saver/app/assets/stylesheets/bootstrap_overrides.scss */
 .btn.outline {
   background: none;
   padding: 12px 22px;
 }
 
-/* line 36, /Users/Paul/codecore-bootcamp/rails/final_project/app/assets/stylesheets/bootstrap_overrides.scss */
+/* line 36, /Users/Paul/codecore-bootcamp/rails/savvy_saver/app/assets/stylesheets/bootstrap_overrides.scss */
 .btn-primary.outline {
   border: 2px solid #0099cc;
   color: #0099cc;
 }
 
-/* line 41, /Users/Paul/codecore-bootcamp/rails/final_project/app/assets/stylesheets/bootstrap_overrides.scss */
+/* line 41, /Users/Paul/codecore-bootcamp/rails/savvy_saver/app/assets/stylesheets/bootstrap_overrides.scss */
 .btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
   color: #33a6cc;
   border-color: #33a6cc;
 }
 
-/* line 46, /Users/Paul/codecore-bootcamp/rails/final_project/app/assets/stylesheets/bootstrap_overrides.scss */
+/* line 46, /Users/Paul/codecore-bootcamp/rails/savvy_saver/app/assets/stylesheets/bootstrap_overrides.scss */
 .btn-primary.outline:active, .btn-primary.outline.active {
   border-color: #007299;
   color: #007299;
