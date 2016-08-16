@@ -52,8 +52,6 @@ gem "omniauth-google-oauth2"
 gem 'faker'
 gem 'letter_opener'
 
-gem 'rails_12factor'
-
 # gem 'devise'
 # gem 'devise-authy'
 # Use Capistrano for deployment
