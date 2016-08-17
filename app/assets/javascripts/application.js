@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.infinite-pages
+//= require bootstrap
 //= require bootstrap-sprockets
 //= require underscore
 //= require gmaps/google
