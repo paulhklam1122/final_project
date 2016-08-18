@@ -49,6 +49,8 @@ GEM
       execjs
     awesome_print (1.7.0)
     bcrypt (3.1.11)
+    bootstrap-generators (3.3.4)
+      railties (>= 3.1.0)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -257,6 +259,7 @@ DEPENDENCIES
   active_model_serializers
   awesome_print
   bcrypt (~> 3.1.7)
+  bootstrap-generators
   bootstrap-sass
   bootstrap_form
   bootswatch-rails
