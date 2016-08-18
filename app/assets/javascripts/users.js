@@ -1,37 +1,3 @@
-$(document).ready(function(){
-  // ===== Scroll to Top ====
-  $(window).scroll(function() {
-    if ($(this).scrollTop() >= 50) { // If page is scrolled more than 50px
-      $('#return-to-bottom').fadeIn(500); // Fade in the arrow
-    } else {
-      $('#return-to-bottom').fadeOut(500); // Else fade out the arrow
-    }
-  });
-  $(document).on('click', '#return-to-bottom', function() { // When arrow is clicked
-    $('body,html').animate({
-      scrollTop: $(document).height() // Scroll to bottom of body
-    }, 500);
-  });
-  $("span.admin").click(function(){$(this).hide()})
-});
-
-$(document).ready(function(){
-  // ===== Scroll to Top ====
-  $(window).scroll(function() {
-    if ($(this).scrollTop() >= 50) { // If page is scrolled more than 50px
-      $('#return-to-top').fadeIn(500); // Fade in the arrow
-    } else {
-      $('#return-to-top').fadeOut(500); // Else fade out the arrow
-    }
-  });
-  $(document).on('click', '#return-to-top', function() { // When arrow is clicked
-    $('body,html').animate({
-      scrollTop: 0 // Scroll to top of body
-    }, 500);
-  });
-  $("span.admin").click(function(){$(this).hide()})
-});
-
 $("ul.nav-tabs a").click(function (e) {
   e.preventDefault();
     $(this).tab('show');
