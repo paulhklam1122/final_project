@@ -51,7 +51,7 @@ gem 'omniauth-facebook'
 gem "omniauth-google-oauth2"
 gem 'faker'
 gem 'letter_opener'
-
+gem 'fog'
 # gem 'devise'
 # gem 'devise-authy'
 # Use Capistrano for deployment
@@ -61,6 +61,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'pry'
+  gem 'rspec-rails'
 end
 
 group :production do
