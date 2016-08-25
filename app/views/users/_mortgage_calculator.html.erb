@@ -1,6 +1,10 @@
 <div class="smpc-div" id="mortgagecalc">
   <form name=mortgagecalc method=POST class="mortgagecalc">
     <div class="form-group">
+      <label for="property-value">How much is the home you are planning to buy?</label>
+      <input type=text onkeypress="return validNumber(event)" name=value id="property-value"> <span class="smpc-error" id="propertyError"></span>
+    </div>
+    <div class="form-group">
       <label for="mortgage-amount">How much do you want to borrow?</label>
       <input type=text onkeypress="return validNumber(event)" name=loan id="mortgage-amount"> <span class="smpc-error" id="loanError"></span>
     </div>
@@ -23,5 +27,6 @@
   <p class="smpc-monthlypayment" id="monthlyIncome" hidden><%= monthly_income %></p>
   <p class="smpc-monthlypayment" id="monthlyMortgagePayments" hidden><%= monthly_mortgage_payments %></p>
   <p class="smpc-monthlypayment" id="monthlyLoanPayments" hidden><%= monthly_loan_payments %></p>
-  <p class="smpc-friendlyreminder" id="friendlyReminder">This is your principal + interest payment, or in other words, what you send to the bank each month. But remember, you will also have to budget for homeowners insurance, real estate taxes, and if you are unable to afford a 20% down payment, Canada Mortgage and Housing Corporation (CMHC). These additional costs could increase your monthly outlay by as much 50%, sometimes more.</p>
+  <p class="smpc-friendlyreminder" id="friendlyReminder">This is your principal + interest payment, or in other words, what you send to the bank each month. Your downpayment is greater or euqal to 20% so you will eligible for a conventional mortgage.</p>
+  <p class="smpc-friendlyreminder" id="unfriendlyReminder">This is your principal + interest payment, or in other words, what you send to the bank each month. Your downpayment is below 20%, please apply for an insured mortgage from Canada Mortgage and Housing Corporation (CMHC).</p>
 </div>
