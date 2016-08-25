@@ -60,8 +60,7 @@ function myPayment() {
     $('#rateError').html('Please enter a valid interest rate. Example: 6.43');
   } else if (($("form[name='mortgagecalc'] input[name='value']").val()) < ($("form[name='mortgagecalc'] input[name='loan']").val())) {
     $('#propertyError').html('The property value has to be larger than the borrowing amount.');
-  }
-    else {
+  } else {
     // Set variables from form data
     var propertyValue = $("form[name='mortgagecalc'] input[name='value']").val();
     var loanPrincipal = $("form[name='mortgagecalc'] input[name='loan']").val();
