@@ -58,9 +58,9 @@ function myPayment() {
   } else if (($("form[name='mortgagecalc'] input[name='rate']").val() === null) || ($("form[name='mortgagecalc'] input[name='rate']").val().length === 0) || (isNaN($("form[name='mortgagecalc'] input[name='rate']").val()) === true)) {
     $('#monthlyPayment').html('Please complete the form.');
     $('#rateError').html('Please enter a valid interest rate. Example: 6.43');
+  } else if (($("form[name='mortgagecalc'] input[name='value']").val()) < ($("form[name='mortgagecalc'] input[name='loan']").val())) {
+    $('#propertyError').html('The property value has to be larger than the borrowing amount.');
   }
-  else if (($("form[name='mortgagecalc'] input[name='value']").val()) < ($("form[name='mortgagecalc'] input[name='loan']").val())) {
-    $('#propertyError').html('The property value has to be larger than the borrowing amount.');}
     else {
     // Set variables from form data
     var propertyValue = $("form[name='mortgagecalc'] input[name='value']").val();
