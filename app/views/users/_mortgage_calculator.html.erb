@@ -2,19 +2,19 @@
   <form name=mortgagecalc method=POST class="mortgagecalc">
     <div class="form-group">
       <label for="property-value">How much is the home you are planning to buy?</label>
-      <input type=number style="color:black" onkeypress="return validNumber(event)" name=value id="property-value"> <span class="smpc-error" id="propertyError"></span>
+      <input type=number class="mortgage-calculator-field" onkeypress="return validNumber(event)" name=value id="property-value"> <span class="smpc-error" id="propertyError"></span>
     </div>
     <div class="form-group">
       <label for="mortgage-amount">How much do you want to borrow?</label>
-      <input type=number style="color:black" onkeypress="return validNumber(event)" name=loan id="mortgage-amount"> <span class="smpc-error" id="loanError"></span>
+      <input type=number class="mortgage-calculator-field" onkeypress="return validNumber(event)" name=loan id="mortgage-amount"> <span class="smpc-error" id="loanError"></span>
     </div>
     <div class="form-group">
       <label for="mortgage-term">What will be the term of this mortgage (in years)?</label>
-      <input type=number style="color:black" onkeypress="return validNumber(event)" name=years id="mortgage-term"> <span class="smpc-error" id="yearsError"></span>
+      <input type=number class="mortgage-calculator-field" onkeypress="return validNumber(event)" name=years id="mortgage-term"> <span class="smpc-error" id="yearsError"></span>
     </div>
     <div class="form-group">
       <label for="mortgage-interest">What will be the interest rate?</label>
-      <input type=number style="color:black" onkeypress="return validNumber(event)" name=rate id="mortgage-interest"> <span class="smpc-error" id="rateError"></span>
+      <input type=number class="mortgage-calculator-field" onkeypress="return validNumber(event)" name=rate id="mortgage-interest"> <span class="smpc-error" id="rateError"></span>
     </div>
     <div class="form-group">
       <input type=button onClick="return myPayment()" value=Calculate class="btn btn-success btn-xs">  <input type=button onClick="return myPaymentReset()" value=Reset class="btn btn-warning btn-xs">
