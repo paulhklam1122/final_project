@@ -26,14 +26,14 @@ $(document).ready(function(){
 })
 
 // ===================================MORTGAGE CALCULATOR============================================
-
-function validNumber(fieldinput){
-  var unicode=fieldinput.charCode? fieldinput.charCode : fieldinput.keyCode;
-  if ((unicode!=8) && (unicode!=46)) { //if the key isn't the backspace key (which we should allow)
-    if (unicode<48||unicode>57) //if not a number
-    return false; //disable key press
-  }
-}
+// 
+// function validNumber(fieldinput){
+//   var unicode=fieldinput.charCode? fieldinput.charCode : fieldinput.keyCode;
+//   if ((unicode!=8) && (unicode!=46)) { //if the key isn't the backspace key (which we should allow)
+//     if (unicode<48||unicode>57) //if not a number
+//     return false; //disable key press
+//   }
+// }
 
 function myPayment() {
 
